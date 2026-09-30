@@ -1,0 +1,78 @@
+project:
+  name: "AI Data Quality Detective"
+
+quality_thresholds:
+  missing:
+    low: 1
+    medium: 5
+    high: 20
+  duplicate:
+    low: 0.5
+    medium: 2
+    high: 5
+
+rules:
+  numeric:
+    quantity:
+      min: 1
+      max: 1000
+      severity: High
+    unit_price:
+      min: 0
+      severity: High
+    discount:
+      min: 0
+      max: 1
+      severity: High
+    customer_age:
+      min: 1
+      max: 120
+      severity: High
+  categories:
+    - region
+    - product_category
+    - payment_method
+  dates:
+    - transaction_date
+
+statistical:
+  min_samples: 30
+  iqr_multiplier: 1.5
+  zscore_threshold: 3.0
+  alpha: 0.05
+  psi_threshold: 0.20
+  outlier_columns:
+    - quantity
+    - unit_price
+    - discount
+    - customer_age
+    - total_amount
+  distribution_columns:
+    - quantity
+    - unit_price
+    - discount
+    - customer_age
+    - total_amount
+    - region
+    - product_category
+    - payment_method
+
+score_weights:
+  completeness: 0.20
+  consistency: 0.20
+  validity: 0.25
+  uniqueness: 0.15
+  timeliness: 0.20
+
+anomaly:
+  contamination: 0.02
+  n_estimators: 200
+  random_state: 42
+  min_samples: 50
+  top_n: 1000
+  columns:
+    - quantity
+    - unit_price
+    - discount
+    - customer_age
+    - total_amount

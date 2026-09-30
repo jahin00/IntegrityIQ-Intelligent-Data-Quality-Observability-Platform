@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1">
+      <stop offset="0" stop-color="#172033"/><stop offset="1" stop-color="#1d2940"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.22"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .title{font:700 30px Inter,Arial,sans-serif;fill:#f8fafc}
+      .sub{font:400 16px Inter,Arial,sans-serif;fill:#94a3b8}
+      .h{font:700 18px Inter,Arial,sans-serif;fill:#e2e8f0}
+      .t{font:400 14px Inter,Arial,sans-serif;fill:#cbd5e1}
+      .small{font:500 13px Inter,Arial,sans-serif;fill:#a5b4fc}
+      .chip{font:700 12px Inter,Arial,sans-serif;fill:#dbeafe}
+    </style>
+  </defs>
+  <rect width="1400" height="760" rx="28" fill="url(#bg)"/>
+  <text x="70" y="70" class="title">AI Data Quality Detective · System Architecture</text>
+  <text x="70" y="102" class="sub">Detect → quantify → explain → prioritize → gate → monitor</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="155" width="220" height="150" rx="18" fill="url(#card)" stroke="#334155"/>
+    <text x="95" y="193" class="small">01 · INPUT</text>
+    <text x="95" y="225" class="h">Data Sources</text>
+    <text x="95" y="254" class="t">CSV · Excel · SQLite</text>
+    <text x="95" y="277" class="t">Reference / current batches</text>
+
+    <rect x="350" y="135" width="235" height="190" rx="18" fill="url(#card)" stroke="#334155"/>
+    <text x="375" y="173" class="small">02 · DETECT</text>
+    <text x="375" y="205" class="h">Quality Engines</text>
+    <text x="375" y="235" class="t">Rules & validation</text>
+    <text x="375" y="260" class="t">Statistics: IQR, KS, PSI</text>
+    <text x="375" y="285" class="t">ML: Isolation Forest</text>
+    <text x="375" y="310" class="t">SQL integrity & reconciliation</text>
+
+    <rect x="645" y="155" width="230" height="150" rx="18" fill="url(#card)" stroke="#334155"/>
+    <text x="670" y="193" class="small">03 · EXPLAIN</text>
+    <text x="670" y="225" class="h">Evidence Engine</text>
+    <text x="670" y="254" class="t">Affected records</text>
+    <text x="670" y="277" class="t">Statistical evidence</text>
+
+    <rect x="935" y="135" width="190" height="190" rx="18" fill="url(#card)" stroke="#334155"/>
+    <text x="960" y="173" class="small">04 · PRIORITIZE</text>
+    <text x="960" y="205" class="h">Issue Intel</text>
+    <text x="960" y="235" class="t">Severity</text>
+    <text x="960" y="260" class="t">Priority P0–P4</text>
+    <text x="960" y="285" class="t">Impact</text>
+    <text x="960" y="310" class="t">Recommendations</text>
+
+    <rect x="1185" y="155" width="145" height="150" rx="18" fill="url(#card)" stroke="#334155"/>
+    <text x="1210" y="193" class="small">05 · REPORT</text>
+    <text x="1210" y="225" class="h">Scorecard</text>
+    <text x="1210" y="254" class="t">0–100 score</text>
+    <text x="1210" y="277" class="t">Dimensions</text>
+
+    <rect x="300" y="425" width="245" height="150" rx="18" fill="url(#card)" stroke="#334155"/>
+    <text x="325" y="463" class="small">06 · GOVERN</text>
+    <text x="325" y="495" class="h">Data Contract</text>
+    <text x="325" y="524" class="t">Schema + business rules</text>
+    <text x="325" y="547" class="t">PASS / WARNING / FAIL</text>
+
+    <rect x="600" y="405" width="245" height="190" rx="18" fill="url(#card)" stroke="#334155"/>
+    <text x="625" y="443" class="small">07 · MONITOR</text>
+    <text x="625" y="475" class="h">Batch History</text>
+    <text x="625" y="504" class="t">Quality trends</text>
+    <text x="625" y="529" class="t">Regression comparison</text>
+    <text x="625" y="554" class="t">Run fingerprints</text>
+    <text x="625" y="579" class="t">Historical findings</text>
+
+    <rect x="905" y="425" width="215" height="150" rx="18" fill="url(#card)" stroke="#334155"/>
+    <text x="930" y="463" class="small">08 · DELIVER</text>
+    <text x="930" y="495" class="h">Streamlit App</text>
+    <text x="930" y="524" class="t">Interactive investigation</text>
+    <text x="930" y="547" class="t">Exports & evidence</text>
+
+    <rect x="1180" y="425" width="150" height="150" rx="18" fill="url(#card)" stroke="#334155"/>
+    <text x="1205" y="463" class="small">09 · CI</text>
+    <text x="1205" y="495" class="h">GitHub</text>
+    <text x="1205" y="524" class="t">Pytest</text>
+    <text x="1205" y="547" class="t">Quality gate</text>
+  </g>
+
+  <g stroke="#94a3b8" stroke-width="2.4" fill="none" marker-end="url(#arrow)">
+    <path d="M290 230 H345"/>
+    <path d="M585 230 H640"/>
+    <path d="M875 230 H930"/>
+    <path d="M1125 230 H1180"/>
+    <path d="M1050 325 V395 H722"/>
+    <path d="M545 500 H595"/>
+    <path d="M845 500 H900"/>
+    <path d="M1120 500 H1175"/>
+    <path d="M1070 325 V395"/>
+  </g>
+
+  <g>
+    <rect x="70" y="650" width="1260" height="55" rx="14" fill="#0f172a" stroke="#334155"/>
+    <text x="95" y="684" class="t">Design principle:</text>
+    <text x="220" y="684" class="t">known constraints use rules; statistical and ML signals trigger investigation rather than automatically declaring data wrong.</text>
+  </g>
+</svg>

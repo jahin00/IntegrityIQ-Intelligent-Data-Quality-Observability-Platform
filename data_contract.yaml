@@ -1,0 +1,82 @@
+version: 1
+name: retail_transactions_contract
+
+quality_gate:
+  fail_score: 70
+  warning_score: 85
+  fail_on_critical_contract_violation: true
+  fail_on_high_contract_violations: 3
+
+schema:
+  extra_column_severity: Medium
+  allowed_extra_columns: []
+  columns:
+    transaction_id:
+      dtype: object
+      nullable: false
+      unique: true
+      severity: Critical
+      critical_pct: 1
+      high_pct: 0.5
+    customer_id:
+      dtype: object
+      nullable: false
+      severity: High
+      critical_pct: 10
+      high_pct: 5
+    transaction_date:
+      dtype: object
+      nullable: false
+      date: true
+      severity: High
+      critical_pct: 10
+      high_pct: 5
+    region:
+      dtype: object
+      nullable: false
+      allowed_values: [Dhaka, Chattogram, Khulna, Rajshahi, Sylhet, Barishal, Rangpur, Mymensingh]
+      severity: Medium
+      critical_pct: 10
+      high_pct: 5
+    product_category:
+      dtype: object
+      nullable: false
+      severity: Medium
+    quantity:
+      dtype: int64
+      accepted_dtypes: [int64, float64]
+      nullable: false
+      min: 1
+      max: 1000
+      severity: High
+    unit_price:
+      dtype: float64
+      accepted_dtypes: [float64, int64]
+      nullable: false
+      min: 0
+      severity: High
+    discount:
+      dtype: float64
+      accepted_dtypes: [float64, int64]
+      nullable: false
+      min: 0
+      max: 1
+      severity: High
+    total_amount:
+      dtype: float64
+      accepted_dtypes: [float64, int64]
+      nullable: false
+      min: 0
+      severity: High
+    payment_method:
+      dtype: object
+      nullable: false
+      allowed_values: [Cash, Card, Mobile Banking, Bank Transfer]
+      severity: Medium
+    customer_age:
+      dtype: float64
+      accepted_dtypes: [float64, int64]
+      nullable: false
+      min: 1
+      max: 120
+      severity: High
