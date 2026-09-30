@@ -205,14 +205,6 @@ The pipeline converts evidence into a repeatable **PASS / WARNING / FAIL** decis
 - [`portfolio/project_summary.md`](portfolio/project_summary.md) — recruiter-facing summary
 - [`portfolio/github_description.md`](portfolio/github_description.md) — repository description / About text
 
-## CV version
-
-**AI Data Quality Detective | Python, Pandas, SQL, Statistics, Streamlit, Scikit-learn**
-
-- Built an automated data-quality investigation platform for CSV, Excel, and SQLite sources, detecting completeness, validity, uniqueness, category/date anomalies, distribution shifts, contract violations, and multivariate anomalies.
-- Designed a transparent five-dimension quality scorecard and PASS/WARNING/FAIL gate with record-level evidence, severity prioritization, impact context, investigation recommendations, and historical batch monitoring.
-- Combined SQL integrity checks, IQR/Z-score, KS, chi-square, PSI, and Isolation Forest in a Streamlit dashboard with automated tests, GitHub Actions CI, Docker support, and exportable investigation reports.
-
 ## Limitations and next improvements
 
 This repository is intentionally production-inspired rather than a claim of a full enterprise data-observability stack. A production rollout would typically add a managed warehouse, orchestration, authentication/authorization, persistent monitoring storage, alerting, and stronger data lineage.
