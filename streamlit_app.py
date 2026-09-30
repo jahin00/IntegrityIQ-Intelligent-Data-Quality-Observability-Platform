@@ -46,7 +46,7 @@ from src.sql.quality_checks import (
 )
 
 st.set_page_config(
-    page_title="AI Data Quality Detective",
+    page_title="IntegrityIQ",
     page_icon="🔎",
     layout="wide",
     initial_sidebar_state="expanded",
