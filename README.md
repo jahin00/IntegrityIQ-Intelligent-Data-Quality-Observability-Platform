@@ -1,4 +1,4 @@
-# 🔎 AI Data Quality Detective
+# 🔎IntegrityIQ
 
 > **A production-inspired data observability and investigation platform for messy tabular and relational data.**
 
